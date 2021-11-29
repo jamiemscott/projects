@@ -40,16 +40,16 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-    color: var--(--col-accent-1);
+    color: var(--col-accent-1);
     text-decoration: none;
 }
 
 a:hover {
-    color: var--(--col-tertiary);
+    color: var(--col-tertiary);
 }
 
 header{
-  background-color: var--(--col-primary);
+  background-color: var(--col-primary);
   position: sticky;
   width: 100vw;
 }

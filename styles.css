@@ -1,0 +1,92 @@
+:root {
+  --ff-title: 'Cinzel', serif;
+  --ff-body: 'Roboto', sans-serif;
+
+  --fw-title-normal: 400;
+  --fw-title-bold: 600;
+  --fw-title-heavy: 800;
+  --fw-body-normal: 400;
+  --fw-body-bold: 600;
+  --fw-body-heavy: 800;
+
+  /* --fs-base: 16px; */
+  --fs-heading-large: ;
+  --fs-heading-medium: ;
+  --fs-heading-small: ;
+
+  --col-primary: rgb(43,43,43);
+  --col-secondary: rgb(17,171,171);
+  --col-tertiary:  rgb(240, 28, 0);
+  --col-accent-1: rgb(141,187,139);
+  --col-accent-2:rgb(240,96,0);
+  --col-neutral-1: rgb(255,255,255);
+  --col-neutral-2: rgb(0,0,0);
+}
+
+body {
+  background-color: var(--col-primary);
+  color: var(--col-neutral-1);
+  font-family: var(--ff-body);
+  font-size: 1.125rem;
+  overflow-x: none;
+}
+
+h1 {
+  font-family: var(--ff-title);
+  font-size: 1.375rem;
+}
+
+header{
+  background-color: var--(--col-primary);
+  position: sticky;
+  width: 100vw;
+}
+
+header nav {
+  display: flex;
+  flex: row wrap;
+  justify-content: center;
+}
+
+header nav ul {
+  color: var(--col-neutral-1);
+  display: flex;
+  flex: row nowrap;
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  font-weight: var(--fw-body-bold);
+  gap: 2.5rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0.8rem 0;
+  text-transform: uppercase;
+}
+
+header nav ul a,
+header nav ul a:link,
+header nav ul a:visited,
+header nav ul a:hover,
+header nav ul a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+header nav ul a:hover {
+  color: var(--col-tertiary);
+}
+
+header nav ul a:active {
+  color: var(--col-accent-2);
+}
+
+main {
+  display: grid;
+  grid-template-columns: [col1] 2rem [col2] 1fr [col3] 2rem;
+  grid-template-areas: left-screen-padding | content | right-screen-padding;
+}
+
+main > * {
+  grid-column: 2; /*make all content start in the second column*/
+  min-width: 0; /* make sure the screen padding columns don't colapse*/
+}

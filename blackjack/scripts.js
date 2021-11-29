@@ -16,7 +16,7 @@ let gameActive = "false"
 let hand = [];
 let handTotal = 0;
 
-dealBtn.disabled = false;
+dealBtn.disabled = true;
 
 function pickCard() {
     const card = cards[(Math.floor(Math.random() * cards.length))];
@@ -49,6 +49,7 @@ function checkTotal() {
     }
     else if (handTotal > 21) {
         handScore.innerHTML = `<p>Bust! Your score is ${handTotal}, you lose 😟</p>`;
+        dealBtn.disabled = true;
     } else {
         handScore.innerHTML = `<p>Your score is ${handTotal}, would you like another card 🤔?<p>`;
     };
@@ -63,10 +64,6 @@ function renderCard() {
         </div>
     `;
     checkTotal();
-};
-
-function startGame() {
-    gameActive = true;
 };
 
 
@@ -86,14 +83,16 @@ startBtn.addEventListener("click", function() {
         handTotal = 0;
         handCont.innerHTML = "";
         handScore.innerHTML = "";
-        startGame();
         startBtn.textContent = "Start the game";
     } else {
         for (let i = 0; i < 2; i++) {
             randomCard();
             renderCard();
+            dealBtn.disabled = false;
+            gameActive = true;
         }
         startBtn.textContent = "Restart the game"
     };   
 });
 
+console.log(dealBtn);

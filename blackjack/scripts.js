@@ -2,7 +2,6 @@
 
 // To Do
 // Check that no two drawn cards in the hand are the same
-// disable the deal button until the game has started
 // Add a dealer to the game
 // Add an option to stick
 
@@ -32,30 +31,27 @@ function randomCard() {
     let name = pickCard();
     let suit = pickSuit();
     let value = ""
-        if (name === "Ace") {
-            value = 11;
-        } else if (name === "King" || name === "Queen" || name === "Jack") {
-            value = 10;
-        } else {
-            value = name;
-        };
-        card = [name, suit, value];
-        return card;
-};
-
-function checkTotal() {
-    if (handTotal == 21) {
-        handScore.innerHTML = `<p>Blackjack! Your score is ${handTotal}, you win 🥳</p>`;
-    }
-    else if (handTotal > 21) {
-        handScore.innerHTML = `<p>Bust! Your score is ${handTotal}, you lose 😟</p>`;
-        dealBtn.disabled = true;
+    
+    if (name === "Ace") {
+        value = 11;
+    } else if (name === "King" || name === "Queen" || name === "Jack") {
+        value = 10;
     } else {
-        handScore.innerHTML = `<p>Your score is ${handTotal}, would you like another card 🤔?<p>`;
+        value = name;
     };
+    card = [name, suit, value];
+
+    for (let i = 0; i < hand.length; i++) {
+        if (hand[i] === card) {
+            randomCard();
+        } else {
+            return card;
+        }
+    }
 };
 
 function renderCard() {
+    randomCard();
     hand.push(card);
     handTotal += card[2];
     handCont.innerHTML += `
@@ -66,13 +62,24 @@ function renderCard() {
     checkTotal();
 };
 
+function checkTotal() {
+    if (handTotal == 21) {
+        handScore.innerHTML = `<p>Blackjack! Your score is ${handTotal}, you win 🥳</p>`;
+        dealBtn.disabled = true;
+    }
+    else if (handTotal > 21) {
+        handScore.innerHTML = `<p>Bust! Your score is ${handTotal}, you lose 😟</p>`;
+        dealBtn.disabled = true;
+    } else {
+        handScore.innerHTML = `<p>Your score is ${handTotal}, would you like another card 🤔?<p>`;
+    };
+};
 
 dealBtn.addEventListener("click", function() {
     if (gameActive) {
-        randomCard();
-        renderCard() ; 
+        renderCard();
     } else {
-        dealBtn.disabled = true
+    dealBtn.disabled = true
     };
     
 });
@@ -86,7 +93,6 @@ startBtn.addEventListener("click", function() {
         startBtn.textContent = "Start the game";
     } else {
         for (let i = 0; i < 2; i++) {
-            randomCard();
             renderCard();
             dealBtn.disabled = false;
             gameActive = true;
@@ -94,5 +100,3 @@ startBtn.addEventListener("click", function() {
         startBtn.textContent = "Restart the game"
     };   
 });
-
-console.log(dealBtn);

@@ -1,7 +1,6 @@
 // JS goes in here
 
 // To Do
-// Check that no two drawn cards in the hand are the same
 // Add a dealer to the game
 // Add an option to stick
 

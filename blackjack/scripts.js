@@ -1,8 +1,13 @@
 // JS goes in here
 
-// To Do
-// Add a dealer to the game
-// Add an option to stick
+// To try
+// Destructuring arrays?
+// For of loop for each card in the hand
+// Arrow functions?
+// simplify the functions by passing parameters between them
+// try includes on the hand array when checking for a duplicate card
+// crete a deck and remove a card from the deck
+// create the card and hand as their own class
 
 const suits = [ "Hearts", "Diamonds", "Clubs", "Spades" ];
 const cards = [ "Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"];
@@ -13,6 +18,7 @@ const dealBtn = document.getElementById("deal-btn");
 let gameActive = "false"
 let hand = [];
 let handTotal = 0;
+let card = [];
 
 dealBtn.disabled = true;
 
@@ -29,7 +35,7 @@ function pickSuit() {
 function randomCard() {
     let name = pickCard();
     let suit = pickSuit();
-    let value = ""
+    let value = "";
     
     if (name === "Ace") {
         value = 11;

@@ -198,8 +198,9 @@ main > * {
     position: absolute;
 }
 
-.banner h1 span:nth-child(1)::before {
-    content: 'Jamie';
+.banner h1 span:nth-child(1)::before,
+.banner h1 span:nth-child(3)::before {
+    content: attr(data-content);
     left: 0;
 }
 
@@ -209,11 +210,6 @@ main > * {
     right: -3px;
     top: 3px;
     z-index: -1;
-}
-
-.banner h1 span:nth-child(3)::before {
-    content: 'Scott';
-    left: 0;
 }
 
 .banner h2 {

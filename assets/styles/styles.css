@@ -2,31 +2,38 @@
 
 @font-face {
     font-family: "SignyardBulbShadow";
-    src: url('fonts/SignyardBulbShadow/font.woff2') format('woff2'), url('fonts/SignyardBulbShadow/font.woff') format('woff');
+    src:  url('/assets/fonts/SignyardBulbShadow/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardBulbShadow/font.woff') format('woff');
   }
   @font-face {
     font-family: "SignyardBulbs";
-    src: url('fonts/SignyardBulbs/font.woff2') format('woff2'), url('fonts/SignyardBulbs/font.woff') format('woff');
+    src:  url('/assets/fonts/SignyardBulbs/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardBulbs/font.woff') format('woff');
   }
   @font-face {
     font-family: "SignyardShadow";
-    src: url('fonts/SignyardShadow/font.woff2') format('woff2'), url('fonts/SignyardShadow/font.woff') format('woff');
+    src:  url('/assets/fonts/SignyardShadow/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardShadow/font.woff') format('woff');
   }
   @font-face {
     font-family: "SignyardSymbols";
-    src: url('fonts/SignyardSymbols/font.woff2') format('woff2'), url('fonts/SignyardSymbols/font.woff') format('woff');
+    src:  url('/assets/fonts/SignyardSymbols/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardSymbols/font.woff') format('woff');
   }
   @font-face {
     font-family: "SignyardOne";
-    src: url('fonts/SignyardOne/font.woff2') format('woff2'), url('fonts/SignyardOne/font.woff') format('woff');
+    src:  url('/assets/fonts/SignyardOne/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardOne/font.woff') format('woff');
   }
   @font-face {
     font-family: "SignyardTwo";
-    src: url('fonts/SignyardTwo/font.woff2') format('woff2'), url('fonts/SignyardTwo/font.woff') format('woff');
+    src:  url('/assets/fonts/SignyardTwo/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardTwo/font.woff') format('woff');
   }
   @font-face {
     font-family: "SignyardD";
-    src: url('fonts/SignyardD/font.woff2') format('woff2'), url('fonts/SignyardD/font.woff') format('woff');
+    src:  url('/assets/fonts/SignyardD/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardD/font.woff') format('woff');
   }
 
 :root {
